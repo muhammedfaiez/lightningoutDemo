@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cyntexa273-dev-ed.develop.my.site.com/lightning/lightning.out.js"></script>
+<div data-lightning-out="true"></div>
+<script>
+    const appName='c:lightningOutDependencyApp';
+    const componentname='c:dataTable';
+    const lightningEndPoint='https://cyntexa273-dev-ed.develop.my.site.com';
+    const targetElement=document.querySelector("[data-lightning-out]");
+     $Lightning.use(
+        appName, 
+        function() {
+        $Lightning.createComponent(
+            componentname, {
+            },
+            targetElement ,
+              function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+              }
+          );
+        },
+        lightningEndPoint
+      );
+</script>
+</html>
